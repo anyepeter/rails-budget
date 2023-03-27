@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  root to: "categories#index"
   resources :category_expenditures
   resources :categories
   resources :expenditures
