@@ -15,22 +15,25 @@ require 'rails_helper'
 RSpec.describe 'Categories', type: :request do
   include Devise::Test::IntegrationHelpers
 
-  let(:user) { User.new(name: 'peter ganye', email: 'petethr@gmail.com', password:12345678, password_confirmation: 12345678) }
-  let(:category) { user.categories.new( name: 'cotntructiond',
-  icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST-yS-rMfYaDmYTKgsYHqvHHRO0-uHffrxEk0bmnCCxF-fjhLtOVXqUfji05fOf996WR8&usqp=CAU') }
-
- describe "get categories" do
-   before do
-    sign_in user
-    get categories_path
+  let(:user) do
+    User.new(name: 'peter ganye', email: 'petethr@gmail.com', password: 12_345_678, password_confirmation: 12_345_678)
   end
-   it 'returns http success' do
-    expect(response).to have_http_status(:success)
+  let(:category) do
+    user.categories.new(name: 'cotntructiond',
+                        icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST-yS-rMfYaDmYTKgsYHqvHHRO0-uHffrxEk0bmnCCxF-fjhLtOVXqUfji05fOf996WR8&usqp=CAU')
   end
 
-  it 'renders the :index template' do
-    expect(response).to render_template(:index)
-  end
-  end
+  describe 'get categories' do
+    before do
+      sign_in user
+      get categories_path
+    end
+    it 'returns http success' do
+      expect(response).to have_http_status(:success)
+    end
 
+    it 'renders the :index template' do
+      expect(response).to render_template(:index)
+    end
+  end
 end

@@ -13,6 +13,5 @@ RSpec.describe CategoriesController, type: :routing do
     it 'routes to #create' do
       expect(post: '/categories').to route_to('categories#create')
     end
-
   end
 end
