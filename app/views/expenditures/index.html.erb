@@ -1,14 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Expenditures</h1>
-
+<h1><%= @expenditures.name %></h1>
 <div id="expenditures">
-  <% @expenditures.each do |expenditure| %>
+<% sum = 0 %>
+  <% @expenditures.expenditures.each do |expenditure| %>
     <%= render expenditure %>
+    <% sum += expenditure.amount %>
     <p>
-      <%= link_to "Show this expenditure", expenditure %>
+      <%= link_to "Show this expenditure", category_expenditure_url(expenditure.categories, expenditure) %>
     </p>
   <% end %>
+  <h2><%= sum %></h2>
 </div>
 
-<%= link_to "New expenditure", new_expenditure_path %>
+<%= link_to "New expenditure", new_category_expenditure_path %>
+<%= link_to "back to categories", categories_path %>

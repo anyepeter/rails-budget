@@ -4,10 +4,13 @@
 
 <div id="categories">
   <% @categories.each do |category| %>
+  <% if can? :manage, category %>
     <%= render category %>
+    <%= category.sum_of_expenditures(category.expenditures) %>
     <p>
-      <%= link_to "Show this category", category %>
+      <%= link_to "Show this category", category_expenditures_url(category.id) %>
     </p>
+    <% end %>
   <% end %>
 </div>
 

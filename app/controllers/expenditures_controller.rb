@@ -3,7 +3,8 @@ class ExpendituresController < ApplicationController
 
   # GET /expenditures or /expenditures.json
   def index
-    @expenditures = Expenditure.all
+    # @expenditures = Expenditure.all
+    @expenditures = Category.find(params[:category_id])
   end
 
   # GET /expenditures/1 or /expenditures/1.json
@@ -12,18 +13,20 @@ class ExpendituresController < ApplicationController
   # GET /expenditures/new
   def new
     @expenditure = Expenditure.new
+    @category = current_user.categories.where.not(id: params[:category_id])
   end
-
-  # GET /expenditures/1/edit
-  def edit; end
 
   # POST /expenditures or /expenditures.json
   def create
-    @expenditure = Expenditure.new(expenditure_params)
-
+    @expenditure = current_user.expenditures.build(expenditure_params)
+    @category = Category.find(params[:category_id])
+    @expenditure.categories << @category
     respond_to do |format|
       if @expenditure.save
-        format.html { redirect_to expenditure_url(@expenditure), notice: 'Expenditure was successfully created.' }
+        format.html do
+          redirect_to category_expenditures_path(@category, @expenditure),
+                      notice: 'Expenditure was successfully created.'
+        end
         format.json { render :show, status: :created, location: @expenditure }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -32,28 +35,28 @@ class ExpendituresController < ApplicationController
     end
   end
 
-  # PATCH/PUT /expenditures/1 or /expenditures/1.json
-  def update
-    respond_to do |format|
-      if @expenditure.update(expenditure_params)
-        format.html { redirect_to expenditure_url(@expenditure), notice: 'Expenditure was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expenditure }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @expenditure.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # # PATCH/PUT /expenditures/1 or /expenditures/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @expenditure.update(expenditure_params)
+  #       format.html { redirect_to expenditure_url(@expenditure), notice: 'Expenditure was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @expenditure }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @expenditure.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # DELETE /expenditures/1 or /expenditures/1.json
-  def destroy
-    @expenditure.destroy
-
-    respond_to do |format|
-      format.html { redirect_to expenditures_url, notice: 'Expenditure was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # # DELETE /expenditures/1 or /expenditures/1.json
+  # def destroy
+  #   @expenditure.destroy
+  #   @category = Category.find(params[:category_id])
+  #   respond_to do |format|
+  #     format.html { redirect_to categories_path, notice: 'Expenditure was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
 
@@ -64,6 +67,6 @@ class ExpendituresController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def expenditure_params
-    params.require(:expenditure).permit(:name, :amount)
+    params.require(:expenditure).permit(:name, :amount, category_ids: [])
   end
 end
