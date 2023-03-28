@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  def admin? 
+  def admin?
     role == 'admin'
   end
 end
