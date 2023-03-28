@@ -4,10 +4,8 @@ Rails.application.routes.draw do
   root to: "categories#index"
   
   resources :categories do 
-  resources :expenditures do 
-    resources :category_expenditures
-  end
-  end 
+  resources :expenditures  
+end
   resources :users
 
 end
