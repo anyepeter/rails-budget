@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
-  load_and_authorize_resource :through => :current_user
+  load_and_authorize_resource through: :current_user
   # GET /categories or /categories.json
   def index
     @categories = current_user.categories

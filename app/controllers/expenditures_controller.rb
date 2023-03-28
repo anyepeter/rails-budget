@@ -3,11 +3,8 @@ class ExpendituresController < ApplicationController
 
   # GET /expenditures or /expenditures.json
   def index
-    
     # @expenditures = Expenditure.all
-      @expenditures = Category.find(params[:category_id])
-      
-   
+    @expenditures = Category.find(params[:category_id])
   end
 
   # GET /expenditures/1 or /expenditures/1.json
@@ -19,7 +16,6 @@ class ExpendituresController < ApplicationController
     @category = current_user.categories.where.not(id: params[:category_id])
   end
 
-
   # POST /expenditures or /expenditures.json
   def create
     @expenditure = current_user.expenditures.build(expenditure_params)
@@ -27,7 +23,10 @@ class ExpendituresController < ApplicationController
     @expenditure.categories << @category
     respond_to do |format|
       if @expenditure.save
-        format.html { redirect_to category_expenditures_path(@category, @expenditure), notice: 'Expenditure was successfully created.' }
+        format.html do
+          redirect_to category_expenditures_path(@category, @expenditure),
+                      notice: 'Expenditure was successfully created.'
+        end
         format.json { render :show, status: :created, location: @expenditure }
       else
         format.html { render :new, status: :unprocessable_entity }
