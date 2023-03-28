@@ -3,8 +3,8 @@
 <%= render @expenditure %>
 
 <div>
-  <%= link_to "Edit this expenditure", edit_expenditure_path(@expenditure) %> |
-  <%= link_to "Back to expenditures", expenditures_path %>
+  <%= link_to "Edit this expenditure", edit_category_expenditure_path(@expenditure) %> |
+  <%= link_to "Back to expenditures",  category_expenditures_path(@expenditure.categories) %>
 
-  <%= button_to "Destroy this expenditure", @expenditure, method: :delete %>
+  <%= button_to "Destroy this expenditure", category_expenditure_path(params[:category_id], @expenditure), method: :delete %>
 </div>
