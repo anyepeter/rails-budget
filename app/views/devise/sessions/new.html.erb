@@ -1,26 +1,24 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<section class="home-container">
+<div class="login-section">
+<div class="login-navar">
+<a href="/"><i class="bi bi-arrow-left big-arrow"></i></a>
+<h2 class="login-title">LOGIN</h2>
+</div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "loginform"}) do |f| %>
+ <div class="actions">
+    <%= f.submit "Log in", class: 'login-button' %>
+  </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<div class="forgotpassword">
+  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+</div>
+</div>
+<section>
