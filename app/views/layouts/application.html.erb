@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsBudget</title>
+    <title>BudgetTracker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-  <nav>
-  <% if user_signed_in? %>
-  <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete %>
-  <% elsif %>
-      <%= link_to 'Sign In', new_user_session_path %>
-      <%= link_to 'Sign Up', new_user_registration_path %>
-<% end %>
-  </nav>
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
