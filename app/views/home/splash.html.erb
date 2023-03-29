@@ -1,9 +1,11 @@
-<div class="container squeeze">
-    <div class="row justify-content-center align-items-center text-center">
-        <h1 class='col-12'>BudgetBee</h1>
+<div class="home-container">
+    <div class="home-section">
+        <div class="home-text">
+        <h1 class='col-12'>BudgetTracker</h1>
+        </div>
         <div class="button-container">
-        <%= button_to "Log In", new_user_session_path, class: "col-12 btn btn btn-primary btn-outline-light", method: :get%>
-        <%= button_to "Sign Up", new_user_registration_path, class: "col-12 btn btn-default", method: :get%>
+        <%= link_to "Log In", new_user_session_path, class: "home-button", method: :get%>
+        <%= link_to "Sign Up", new_user_registration_path, class: "home-button", method: :get%>
         </div>
     </div>
 </div>
