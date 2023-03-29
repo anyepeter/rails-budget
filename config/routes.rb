@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "categories#index"
+  root to: 'home#splash'
   
   resources :categories do 
   resources :expenditures  
