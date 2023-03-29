@@ -1,18 +1,39 @@
-<p style="color: green"><%= notice %></p>
+ <section class="home-container">
 
-<h1>Expenditures</h1>
-<h1><%= @expenditures.name %></h1>
-<div id="expenditures">
+   <div class="navbaer-section">
+  <nav class="expenditure-navbar">
+  <a href="/categories"><i class="bi bi-arrow-left big-arrow"></i></a>
+  <h1 class="page-title">Expenditures</h1>
+  <% if user_signed_in? %>
+  <%= link_to 'Sign out', destroy_user_session_path, class: 'signout', 'data-turbo-method': :delete %>
+<% end %>
+  </nav>
+  <div class="text-name">
+  <h3><%= @expenditures.name %></h3>
+</div>
+</div>
+<div class="page-section">
+<ul class = "expenditures" id="expenditures">
 <% sum = 0 %>
   <% @expenditures.expenditures.each do |expenditure| %>
-    <%= render expenditure %>
-    <% sum += expenditure.amount %>
-    <p>
-      <%= link_to "Show this expenditure", category_expenditure_url(expenditure.categories, expenditure) %>
-    </p>
-  <% end %>
-  <h2><%= sum %></h2>
-</div>
+  <li class="expenditure">
+     <p class="expenditure-name">
+    <%= expenditure.name %>
+  </p>
 
-<%= link_to "New expenditure", new_category_expenditure_path %>
-<%= link_to "back to categories", categories_path %>
+  <p class = 'expenditure-amount'>
+    $<%= expenditure.amount %>
+  </p>
+
+    <% sum += expenditure.amount %>
+    <div>
+  <% end %>
+  <h1 class="category-sum">$<%= sum %></h1> 
+  </div>
+</li>
+</ul>
+</div>
+<div class="new-categoryisection">
+<%= link_to "New Transaction", new_category_expenditure_path, class: 'new-category-button'  %>
+</div>
+</section>
