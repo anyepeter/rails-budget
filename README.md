@@ -86,9 +86,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  mkdir blog-app
-  cd blog-app
-  git clone git@github.com:Nejjari001/blog.git
+  https://github.com/anyepeter/rails-budget.git
 ```
 
 ### Install
@@ -96,7 +94,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd Blog
+  cd rails-budget
   gem install
 
 ### Usage
@@ -112,7 +110,7 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -121,11 +119,13 @@ To run tests, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Ngufor Emmanuella**
 
-- GitHub: [ @Ngufor-Emmanuella](https://github.com/Ngufor-Emmanuella)
-- Twitter: [@Ngufor-Emmanuella](https://https//twitter.com/Ngufor-Emmanuella)
-- LinkedIn: [Ngufor-Emmanuella](https://www.linkedin.com/in/Ngufor-Emmanuella)
+👤 **ANYE PETER**
+
+- GitHub: [@anyepeter](https://github.com/anyepeter)
+- Twitter: [@anyepeter](https://twitter.com/home?lang=en)
+- LinkedIn: [peterchendi](https://www.linkedin.com/feed/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,14 +175,10 @@ I would like to thank Microverse for providing me with the reading material that
 
   - Yes, it is okay.
 
-- **Can I contribute to this repository?**
-
-  - Yes. Just contact me at `emmanuellangufor@gmail.com` and I will gladly add you as a contributor to the repository.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./https://github.com/anyepeter/rails-budget/blob/develop/LICENSE) licensed.
