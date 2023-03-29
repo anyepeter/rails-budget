@@ -9,11 +9,11 @@
     <%= f.submit "Log in", class: 'login-button' %>
   </div>
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", id: 'user_email' %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", id: 'user_password' %>
   </div>
 
 <% end %>
