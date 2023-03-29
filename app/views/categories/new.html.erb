@@ -1,9 +1,13 @@
-<h1>New category</h1>
-
+<section class="home-container">
+<div class="login-section">
+<div class="login-category">
+<a href="/categories"><i class="bi bi-arrow-left big-arrow"></i></a>
+<h2 class="login-title">New Category</h2>
+<% if user_signed_in? %>
+  <%= link_to 'Sign out', destroy_user_session_path, class: 'signout', 'data-turbo-method': :delete %>
+<% end %>
+</div>
 <%= render "form", category: @category %>
 
-<br>
-
-<div>
-  <%= link_to "Back to categories", categories_path %>
 </div>
+</section>
