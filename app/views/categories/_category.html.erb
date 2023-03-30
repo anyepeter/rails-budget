@@ -5,6 +5,6 @@
    </p>
    <div class="title-and-date">
  <p class="name-of-category"><%= category.name %></p>
- <p> <%= Time.now.strftime('%m-%d-%Y') %></p>
+ <p><%= category.created_at.strftime("%d %b %Y") %></p>
  </div>
 </div>
