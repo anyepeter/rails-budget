@@ -43,7 +43,7 @@ RSpec.describe 'Test for the category and user page', type: :system do
         expect(page).to have_content(@category.name.to_s)
       end
       it 'should image' do
-        assert_text 'NEW CATEGORY'
+        expect(page).to have_content('NEW CATEGORY')
       end
     end
   end
