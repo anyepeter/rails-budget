@@ -64,8 +64,8 @@
 ### Key Features <a name="key-features"></a>
 
 - **Log into the application**
-- **Create a post for the application users**
-- **Interact with the posts (Like post or comment on Post)**
+- **Create a category**
+- **Add transaction**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,8 +95,10 @@ Install this project with:
 
 ```sh
   cd rails-budget
-  gem install
-
+  bundle install 
+  rails db:create
+  rails db:schema:load
+```
 ### Usage
 
 To run the project, execute the following command:
@@ -135,7 +137,7 @@ To run tests, run the following command:
 
 
 - [ ] **A better graphical user interface**
-- [ ] **A signup functionality**
+- [ ] **Add a credit card**
 - [ ] **A chat functionality**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
