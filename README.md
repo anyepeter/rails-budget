@@ -70,6 +70,9 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+### Live demo 
+
+Here is a live [demo](https://budgetracker.onrender.com) of the application
 
 ### Video presentation
 Here is the link to the video presentation of the [project](https://www.loom.com/share/1e0b6607108c4e4fb2f9d6ea54bd8cb7)
@@ -168,7 +171,8 @@ If you like this project, go ahead and give it a star. It is very much appreciat
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 
-I would like to thank Microverse for providing me with the reading material that helped me during this project development.
+- I would like to thank Microvers for providing this great opportunity and for the project guide as well 👏
+- Huge appriciation to Gregoire Vella for providing design system guidelines since this project is built upon thatopment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
