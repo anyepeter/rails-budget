@@ -1,0 +1,23 @@
+<section class="home-container">
+<div class="page-section">
+  <nav class="page-navbar">
+  <h1 class="page-title">categories</h2>
+  <% if user_signed_in? %>
+  <%= link_to 'Sign out', destroy_user_session_path, class: 'signout', 'data-turbo-method': :delete %>
+<% end %>
+  </nav>
+<div id="categories" class="categories">
+  <% @categories.each do |category| %>
+  <% if can? :manage, category %>
+  <a href='/categories/<%= category.id %>/expenditures' class="category">
+    <%= render category %>
+   <p class="total-amount">$<%= category.sum_of_expenditures(category.expenditures) %></p>
+    </a>
+    <% end %>
+  <% end %>
+</div>
+</div>
+<div class="new-categoryisection">
+<%= link_to "New category", new_category_path, class: 'new-category-button' %>
+</div>
+</section>

@@ -1,0 +1,10 @@
+
+<div class="category-name" id="<%= dom_id category %>">
+<p class="icon-class">
+   <img src="<%= category.icon %>" alt="icon" class="icon-image">
+   </p>
+   <div class="title-and-date">
+ <p class="name-of-category"><%= category.name %></p>
+ <p><%= category.created_at.strftime("%d %b %Y") %></p>
+ </div>
+</div>

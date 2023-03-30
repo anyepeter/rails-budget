@@ -1,0 +1,396 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'proxima-nova', sans-serif;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  background-color: #eaeaec;
+}
+
+.home-section {
+  height: inherit;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-text {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-text h1 {
+  margin-top: 7rem;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 38px;
+}
+
+.button-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-button {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #434b54;
+  padding: 10px;
+}
+
+.home-button:hover {
+  background-color: #3778c2;
+  color: #fff;
+  font-family: 'proxima-nova', sans-serif;
+}
+
+.actions {
+  position: absolute;
+  top: 0.7rem;
+  right: 2%;
+}
+
+.login-section {
+  height: inherit;
+  width: 100%;
+  max-width: 500px;
+}
+
+.login-button {
+  background-color: #3778c2;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+}
+
+.login-navar {
+  display: flex;
+  width: inherit;
+  background-color: #3778c2;
+  color: #fff;
+  height: 50px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 30%;
+}
+
+.big-arrow {
+  font-size: 25px;
+  color: #dbdbde;
+}
+
+.login-title {
+  font-family: 'proxima-nova', sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+.loginform {
+  width: inherit;
+  margin-top: 2rem;
+}
+
+.loginform .field {
+  width: inherit;
+}
+
+.field input {
+  width: inherit;
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'proxima-nova', sans-serif;
+  border: none;
+  background-color: #fff;
+  border-top: 1px solid #e4e4e6;
+  border-bottom: 1px solid #ececf0;
+}
+
+.forgotpassword {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.forgotpassword a {
+  text-decoration: none;
+  color: #434b54;
+}
+
+.signup {
+  display: flex;
+  width: inherit;
+  background-color: #3778c2;
+  color: #fff;
+  height: 50px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 25%;
+}
+
+.page-section {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.page-navbar {
+  display: flex;
+  width: inherit;
+  background-color: #3778c2;
+  color: #fff;
+  height: 50px;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  gap: 20%;
+}
+
+.page-title {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.signout {
+  text-decoration: none;
+  color: #f9f9ff;
+}
+
+.categories {
+  width: 90%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+}
+
+.category {
+  display: flex;
+  padding: 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #434b54;
+  background-color: #fff;
+}
+
+.category-name {
+  display: flex;
+  width: 70%;
+  gap: 1rem;
+}
+
+.icon-image {
+  width: 90px;
+  height: 90px;
+}
+
+.title-and-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+}
+
+.total-amount {
+  margin-top: 1.8rem;
+  color: #000;
+}
+
+.name-of-category {
+  font-size: 20px;
+}
+
+.new-categoryisection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  background-color: #5fb523;
+  height: 95px;
+  padding: 1rem;
+}
+
+.new-category-button {
+  width: 100%;
+  border: 1px solid #fff;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.navbaer-section {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  flex-direction: column;
+  top: 0;
+}
+
+.expenditure-navbar {
+  display: flex;
+  width: inherit;
+  background-color: #3778c2;
+  color: #fff;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.text-name {
+  display: flex;
+  width: inherit;
+  justify-content: flex-start;
+  padding: 10px;
+  background-color: #fff;
+  height: 100px;
+  align-items: center;
+}
+
+.text-name h3 {
+  color: #434b54;
+}
+
+.category-sum {
+  position: absolute;
+  top: 85px;
+  right: 2%;
+}
+
+.expenditures {
+  margin-top: 175px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expenditure {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #434b54;
+  background-color: #fff;
+  gap: 1rem;
+}
+
+.expenditure-name {
+  width: 75%;
+}
+
+.expenditure-button {
+  width: 100%;
+}
+
+.login-category {
+  display: flex;
+  width: inherit;
+  background-color: #3778c2;
+  color: #fff;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.field-sumit {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.submit-button {
+  width: 60%;
+  height: 45px;
+  background-color: #5fb523;
+  color: #fff;
+  border: none;
+}
+
+@media (min-width: 700px) {
+  .actions,
+  .category-sum {
+    right: 18%;
+  }
+}
+
+@media (min-width: 800px) {
+  .actions,
+  .category-sum {
+    right: 25%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .actions,
+  .category-sum {
+    right: 30%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .actions,
+  .category-sum {
+    right: 33%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .actions,
+  .category-sum {
+    right: 38%;
+  }
+}
