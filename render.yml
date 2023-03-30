@@ -6,7 +6,7 @@ databases:
 
 services:
   - type: web
-    name: postgres
+    name: budgetracker
     env: ruby
     buildCommand: "./render-build.sh"
     startCommand: "bundle exec rails s"
