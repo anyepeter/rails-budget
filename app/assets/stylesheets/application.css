@@ -361,31 +361,36 @@
 }
 
 @media (min-width: 700px) {
-  .actions, .category-sum {
+  .actions,
+  .category-sum {
     right: 18%;
   }
 }
 
 @media (min-width: 800px) {
-  .actions, .category-sum {
+  .actions,
+  .category-sum {
     right: 25%;
   }
 }
 
 @media (min-width: 1000px) {
-  .actions, .category-sum {
+  .actions,
+  .category-sum {
     right: 30%;
   }
 }
 
 @media (min-width: 1200px) {
-  .actions, .category-sum {
+  .actions,
+  .category-sum {
     right: 33%;
   }
 }
 
 @media (min-width: 1400px) {
-  .actions, .category-sum {
+  .actions,
+  .category-sum {
     right: 38%;
   }
 }
