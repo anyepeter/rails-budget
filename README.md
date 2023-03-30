@@ -71,6 +71,9 @@
 
 <!-- LIVE DEMO -->
 
+### Video presentation
+Here is the link to the video presentation of the [project](https://www.loom.com/share/1e0b6607108c4e4fb2f9d6ea54bd8cb7)
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
