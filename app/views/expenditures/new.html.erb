@@ -1,0 +1,20 @@
+<section class="home-container">
+<div class="login-section">
+<div class="login-category">
+<a href="/categories/<%= params[:category_id] %>/expenditures"><i class="bi bi-arrow-left big-arrow"></i></a>
+<h2 class="login-title">Transaction</h2>
+<% if user_signed_in? %>
+  <%= link_to 'Sign out', destroy_user_session_path, class: 'signout', 'data-turbo-method': :delete %>
+<% end %>
+</div>
+<%= render "form", expenditure: @expenditure %>
+
+<br>
+
+<div>
+  <%= link_to "Back to expenditures", category_expenditures_path(params[:category_id]) %>
+</div>
+
+
+</div>
+</section>

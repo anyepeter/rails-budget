@@ -1,0 +1,36 @@
+<%= form_with(scope: :expenditure, url: category_expenditures_path, html: {class: "loginform"}) do |form| %>
+  <% if expenditure.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(expenditure.errors.count, "error") %> prohibited this expenditure from being saved:</h2>
+
+      <ul>
+        <% expenditure.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: 'Transaction name' %>
+  </div>
+
+<div class="field">
+    <%= form.text_field :amount, placeholder: 'Transaction amount' %>
+  </div>
+
+  <% @category.each do |category| %>
+  <br >
+   <p>if this transaction was use in another category click the category</p>
+   <br >
+    <div class="form-check">
+      <%= form.check_box :category_ids, { multiple: true }, category.id, nil %>
+      <%= form.label :category_ids, category.name, class: "form-check-label" %>
+    </div>
+<% end %>
+
+  <div class="field-sumit">
+    <%= form.submit "Save", class: "submit-button" %>
+  </div>
+<% end %>
